@@ -36,4 +36,4 @@ def daum_webtoon():
 
     for week in weeklist:
         daum_webtoon_day(week)
-daum_webtoon()
+# daum_webtoon()
