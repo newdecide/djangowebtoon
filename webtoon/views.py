@@ -13,3 +13,4 @@ class WebtoonList(ListView):
     model = WebToon
     # default object_name / 보이도록 하려면 webtoon_list로 명명s
     context_object_name = 'webtoon_list'
+    paginate_by = 20
