@@ -13,7 +13,7 @@
             <th scope="col">작가</th>
         </thead>
         <tbody>
-            {% for webtoon in object_list %}
+            {% for webtoon in webtoon_list %}
                 <tr>
                     <td>{{ forloop.counter }}</td>
                     <td><img src="{{ webtoon.webtoon_img_url }}"></td>
