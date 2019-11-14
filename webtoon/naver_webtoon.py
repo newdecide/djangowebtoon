@@ -18,7 +18,7 @@ import bs4
     # print(webtoon_tag.find('a').find('img')['src'])
     # print(webtoon_tag.find('dd',{'class':'desc'}).text.strip())
 
-
+# 함수로 만듦(월~일 웹툰)
 def naver_webtoon_day(day):
     html = requests.get("https://comic.naver.com/webtoon/weekdayList.nhn?week="+day)
     bs_object = bs4.BeautifulSoup(html.text, "html.parser")
@@ -29,12 +29,13 @@ def naver_webtoon_day(day):
 
     for webtoon_tag in webtoon_list_tags:
         # 반복문으로 제목만 가져온다.
-        # 함수로 만듦(월~일 웹툰)
         print(webtoon_tag.find('a')['title'])
         print(webtoon_tag.find('a').find('img')['src'])
         print(webtoon_tag.find('dd',{'class':'desc'}).text.strip())
 
+# 장고실행시 실행되버리기때문에 함수로 만듦.
+def naver_webtoon():
+    week_list = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
 
-week_list = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
-for week in week_list:
-    naver_webtoon_day(week)
+    for week in week_list:
+        naver_webtoon_day(week)
