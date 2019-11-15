@@ -23,7 +23,7 @@ class WebtoonList(ListView):
     def get_queryset(self):
         query = self.request.GET.get('q')
         if query:
-            return WebToon.objects.filter(webtoon_name=query)
+            return WebToon.objects.filter(webtoon_name__contains=query)
         else:
             return WebToon.objects.filter(site_name='네이버')
 

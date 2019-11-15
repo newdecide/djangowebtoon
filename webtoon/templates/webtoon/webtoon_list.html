@@ -2,6 +2,7 @@
 {% block title %}웹툰 리스트{% endblock %}
 
 {% block content %}
+{% if webtoon_list %}
 <table class="table">
     <thead class="thead-dark">
     <th scope="col">#</th>
@@ -82,6 +83,11 @@
     </li>
     {% endif %}
 </ul>
+{% endif %}
+
+{% else %}
+    <p class="text-center">검색 결과가 없습니다.</p>
+
 {% endif %}
 </div>
 {% endblock %}
