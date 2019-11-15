@@ -22,13 +22,13 @@
         </tr>
     </table>
 
-    <form action="/comment/{{ object.webtoon.webtoon_id }}" method="post">
+    <form class="form-inline" action="/comment/{{ object.webtoon.webtoon_id }}" method="post">
         {% csrf_token %}
         <input class="form-control" type="text" name="comment_text">
         <input class="btn btn-success" type="submit" value="등록">
     </form>
 
-    <table>
+    <table class="table" class="table table-condensed">
         <tbody>
             {% for comment in object.comment %}
             <tr>
