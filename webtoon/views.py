@@ -21,7 +21,11 @@ class WebtoonList(ListView):
     paginate_by = 25
 
     def get_queryset(self):
-        return WebToon.objects.filter(site_name='네이버')
+        query = self.request.GET.get('q')
+        if query:
+            return WebToon.objects.filter(webtoon_name=query)
+        else:
+            return WebToon.objects.filter(site_name='네이버')
 
 
 class DaumWebtoonList(ListView):
