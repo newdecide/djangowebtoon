@@ -1,6 +1,6 @@
 import requests
 import bs4
-# from .models import WebToon
+from .models import WebToon
 
 # html = requests.get("https://comic.naver.com/webtoon/weekdayList.nhn?week=mon")
 # print("status code:", html.status_code)
@@ -30,46 +30,62 @@ def naver_webtoon_day(day):
 
 
     for webtoon_tag in webtoon_list_tags:
-        # 업데이트
-        if webtoon_tag.find('em', {'class':'ico_updt'}):
-            print(webtoon_tag.find('a')['title'] + ": 업데이트")
-        else:
-            print(webtoon_tag.find('a')['title'] + ": 업데이트 X")
-
-        # 휴재
-        if webtoon_tag.find('em', {'class':'ico_break'}):
-            print(webtoon_tag.find('a')['title'] + ": 휴재")
-
-        # 신규
-        if webtoon_tag.find('span', {'class':'ico_new2'}):
-            print(webtoon_tag.find('a')['title'] + ": 신규")
-
-        # 요일
-        if day == 'mon':
-            print(webtoon_tag.find('a')['title'] + ": 월요일")
-        elif day == 'tur':
-            print(webtoon_tag.find('a')['title'] + ": 화요일")
-        elif day == 'wed':
-            print(webtoon_tag.find('a')['title'] + ": 수요일")
-        elif day == 'thu':
-            print(webtoon_tag.find('a')['title'] + ": 목요일")
-        elif day == 'fir':
-            print(webtoon_tag.find('a')['title'] + ": 금요일")
-        elif day == 'sat':
-            print(webtoon_tag.find('a')['title'] + ": 토요일")
-        else:
-            print(webtoon_tag.find('a')['title'] + ": 일요일")
-
         # 처음 DB
-        # for webtoon_tag in webtoon_list_tags:
-        # #     webtoon = WebToon()
-        # #     webtoon.site_name = "네이버"
-        # #     webtoon.webtoon_name = webtoon_tag.find('a')['title']
-        # #     webtoon.webtoon_author = webtoon_tag.find('dd',{'class':'desc'}).text.strip()
-        # #     webtoon.webtoon_img_url = webtoon_tag.find('a').find('img')['src']
-        # #     webtoon.webtoon_id = "네이버_" + webtoon_tag.find('a')['title']
-        # #
-        # #     webtoon.save()
+        for webtoon_tag in webtoon_list_tags:
+            webtoon = WebToon()
+            webtoon.site_name = "네이버"
+            webtoon.webtoon_name = webtoon_tag.find('a')['title']
+            webtoon.webtoon_author = webtoon_tag.find('dd',{'class':'desc'}).text.strip()
+            webtoon.webtoon_img_url = webtoon_tag.find('a').find('img')['src']
+            webtoon.webtoon_id = "네이버_" + webtoon_tag.find('a')['title']
+            # 업데이트 유무
+            if webtoon_tag.find('em', {'class':'ico_updt'}):
+                webtoon.webtoon_update = 1
+                # print(webtoon_tag.find('a')['title'] + ": 업데이트")
+            else:
+                webtoon.webtoon_update = 0
+                # print(webtoon_tag.find('a')['title'] + ": 업데이트 X")
+
+            # 휴재 유무
+            if webtoon_tag.find('em', {'class':'ico_break'}):
+                webtoon.webtoon_status = 1
+                # print(webtoon_tag.find('a')['title'] + ": 휴재")
+            elif webtoon_tag.find('span', {'class':'ico_new2'}):
+                webtoon.webtoon_status = 2
+                # print(webtoon_tag.find('a')['title'] + ": 신규")
+            else:
+                webtoon.webtoon_status = 0
+
+            # 신규
+            # if webtoon_tag.find('span', {'class':'ico_new2'}):
+
+
+
+            # 요일
+            if day == 'mon':
+                webtoon.webtoon_mon = 1
+                # print(webtoon_tag.find('a')['title'] + ": 월요일")
+            elif day == 'tur':
+                webtoon.webtoon_tur = 1
+                # print(webtoon_tag.find('a')['title'] + ": 화요일")
+            elif day == 'wed':
+                webtoon.webtoon_wed = 1
+                # print(webtoon_tag.find('a')['title'] + ": 수요일")
+            elif day == 'thu':
+                webtoon.webtoon_thu = 1
+                # print(webtoon_tag.find('a')['title'] + ": 목요일")
+            elif day == 'fir':
+                webtoon.webtoon_fir = 1
+                # print(webtoon_tag.find('a')['title'] + ": 금요일")
+            elif day == 'sat':
+                webtoon.webtoon_sat = 1
+                # print(webtoon_tag.find('a')['title'] + ": 토요일")
+            else:
+                webtoon.webtoon_sun = 1
+                # print(webtoon_tag.find('a')['title'] + ": 일요일")
+            webtoon.save()
+
+
 
         # print(webtoon_tag.find('a')['title'])
         # print(webtoon_tag.find('a').find('img')['src'])
@@ -81,4 +97,4 @@ def naver_webtoon():
 
     for week in week_list:
         naver_webtoon_day(week)
-naver_webtoon()
+# naver_webtoon()
