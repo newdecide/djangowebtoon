@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .naver_webtoon import *
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from .daum_webtoon import *
 
 # Create your views here.
@@ -36,3 +36,7 @@ class DaumWebtoonList(ListView):
 
     def get_queryset(self):
         return WebToon.objects.filter(site_name='다음')
+
+class WebtoonDetailView(DetailView):
+    model = WebToon
+

@@ -1,0 +1,25 @@
+{% extends 'Base.html' %}
+{% block title %}웹툰 상세화면{% endblock %}
+
+{% block content %}
+<div class="table-responsive">
+    <table class="table" class="table table-condensed">
+        <tr scope="col">
+            <th>이미지</th>
+            <td class="text-center"><img src="{{ webtoon.webtoon_img_url }}"></td>
+        </tr>
+        <tr scope="col">
+            <th>제목</th>
+            <td class="text-center">{{ webtoon.webtoon_name }}</td>
+        </tr>
+        <tr scope="col">
+            <th>작가</th>
+            <td class="text-center">{{ webtoon.webtoon_author }}</td>
+        </tr>
+        <tr scope="col">
+            <th>조회수</th>
+            <td class="text-center">조회수 : {{ webtoon.webtoon_views }}</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}
