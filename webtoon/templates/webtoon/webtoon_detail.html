@@ -6,7 +6,7 @@
     <table class="table" class="table table-condensed">
         <tr scope="col">
             <th>이미지</th>
-            <td class="text-center"><img src="{{ webtoon.webtoon_img_url }}"></td>
+            <td class="text-center"><img src="{{ object.webtoon_img_url }}"></td>
         </tr>
         <tr scope="col">
             <th>제목</th>
@@ -21,5 +21,11 @@
             <td class="text-center">조회수 : {{ webtoon.webtoon_views }}</td>
         </tr>
     </table>
+
+    <form width="200" action="/comment/{{ object.webtoon_id }}" method="post">
+        {% csrf_token %}
+        <input  class="form-control" type="text" name="comment_text">
+        <input class="btn btn-success" type="submit" value="등록">
+    </form>
 </div>
 {% endblock %}

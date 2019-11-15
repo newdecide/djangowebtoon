@@ -1,8 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from .naver_webtoon import *
 from django.views.generic import ListView, DetailView
 from .daum_webtoon import *
+from .models import *
+from django.utils import timezone
 
 # Create your views here.
 def naver_webtoon_crw(request):
@@ -46,3 +48,13 @@ class WebtoonDetailView(DetailView):
         return webtoon
 
     # model = WebToon
+
+def addComment(request, pk):
+    comment = Comment()
+    comment.webtoon_id = pk
+    comment.comment_text = request.POST['comment_text']
+    comment.create_date_time = timezone.now()
+
+    comment.save()
+
+    return HttpResponseRedirect('/')

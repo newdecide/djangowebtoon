@@ -24,7 +24,7 @@ class WebToon(models.Model):
 class Comment(models.Model):
     webtoon_id = models.CharField(max_length=100)
     comment_text = models.CharField(max_length=300)
-    create_date_tim = models.DateTimeField()
+    create_date_time = models.DateTimeField()
     rank = models.IntegerField(default=5)
 
     def __str__(self):
