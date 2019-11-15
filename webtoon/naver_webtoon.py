@@ -65,8 +65,8 @@ def naver_webtoon_day(day):
             if day == 'mon':
                 webtoon.webtoon_mon = 1
                 # print(webtoon_tag.find('a')['title'] + ": 월요일")
-            elif day == 'tur':
-                webtoon.webtoon_tur = 1
+            elif day == 'tue':
+                webtoon.webtoon_tue = 1
                 # print(webtoon_tag.find('a')['title'] + ": 화요일")
             elif day == 'wed':
                 webtoon.webtoon_wed = 1

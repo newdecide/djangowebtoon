@@ -8,6 +8,9 @@
     <th scope="col">이미지</th>
     <th scope="col" class="text-center">제목</th>
     <th scope="col" class="text-center">작가</th>
+    <th scope="col" class="text-center">업데이트</th>
+    <th scope="col" class="text-center">상태</th>
+    <th scope="col" class="text-center">요일</th>
     </thead>
     <tbody>
     {% for webtoon in object_list %}
@@ -16,7 +19,41 @@
         <td><img src="{{ webtoon.webtoon_img_url }}"></td>
         <td class="text-center">{{ webtoon.webtoon_name }}</td>
         <td class="text-center">{{ webtoon.webtoon_author }}</td>
-        {% endfor %}
+
+        <!--업데이트-->
+        {% if webtoon.webtoon_update == 1 %}
+        <td class="text-center">업데이트</td>
+        {% else %}
+        <td class="text-center"></td>
+        {% endif %}
+
+        <!--상태-->
+        {% if webtoon.webtoon_status == 1 %}
+        <td class="text-center">휴재</td>
+        {% elif webtoon.webtoon_status == 2 %}
+        <td class="text-center">신규</td>
+        {% else %}
+        <td class="text-center"></td>
+        {% endif %}
+
+        <!--요일-->
+        {% if webtoon.webtoon_mon == 1 %}
+        <td class="text-center">월요일</td>
+        {% elif webtoon.webtoon_tue == 1 %}
+        <td class="text-center">화요일</td>
+        {% elif webtoon.webtoon_wed == 1 %}
+        <td class="text-center">수요일</td>
+        {% elif webtoon.webtoon_thu == 1 %}
+        <td class="text-center">목요일</td>
+        {% elif webtoon.webtoon_fri == 1 %}
+        <td class="text-center">금요일</td>
+        {% elif webtoon.webtoon_sat == 1 %}
+        <td class="text-center">토요일</td>
+        {% else %}
+        <td class="text-center">일요일</td>
+        {% endif %}
+    </tr>
+    {% endfor %}
     </tbody>
 </table>
 {% if is_paginated %}
