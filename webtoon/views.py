@@ -40,12 +40,21 @@ class DaumWebtoonList(ListView):
         return WebToon.objects.filter(site_name='다음')
 
 class WebtoonDetailView(DetailView):
+    template_name = "webtoon/webtoon_detail.html"
+
     def get_object(self, queryset=None):
         webtoon_id = self.kwargs['pk']
         webtoon = WebToon.objects.get(pk=webtoon_id)
         webtoon.webtoon_views += 1
         webtoon.save()
-        return webtoon
+
+        commentList = Comment.objects.filter(webtoon_id=webtoon_id)
+        webtoon_object = {
+            "webtoon":webtoon,
+            "comment":commentList
+        }
+
+        return webtoon_object
 
     # model = WebToon
 
@@ -57,4 +66,4 @@ def addComment(request, pk):
 
     comment.save()
 
-    return HttpResponseRedirect('/')
+    return HttpResponseRedirect('/detail/'+pk)
