@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae241417-2b06-4472-aa37-7d58e606e787" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/webtoon/templates/webtoon/webtoon_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webtoon/templates/webtoon/webtoon_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/webtoon/templates/webtoon/webtoon_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webtoon/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/webtoon/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webtoon/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/webtoon/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,11 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webtoon/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="521">
-              <caret line="41" selection-start-line="41" selection-end-line="41" />
+            <state relative-caret-position="551">
+              <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -65,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webtoon/templates/webtoon/webtoon_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+            <state relative-caret-position="210">
+              <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -155,10 +151,10 @@
         <option value="$PROJECT_DIR$/webtoon/models.py" />
         <option value="$PROJECT_DIR$/webtoon/naver_webtoon.py" />
         <option value="$PROJECT_DIR$/templates/Base.html" />
-        <option value="$PROJECT_DIR$/webtoon/views.py" />
         <option value="$PROJECT_DIR$/webtoon/urls.py" />
         <option value="$PROJECT_DIR$/webtoon/templates/webtoon/webtoon_list.html" />
         <option value="$PROJECT_DIR$/webtoon/templates/webtoon/webtoon_detail.html" />
+        <option value="$PROJECT_DIR$/webtoon/views.py" />
       </list>
     </option>
   </component>
@@ -322,12 +318,12 @@
       <workItem from="1573694912492" duration="18574000" />
       <workItem from="1573718592132" duration="361000" />
       <workItem from="1573776792902" duration="3231000" />
-      <workItem from="1573781421620" duration="6209000" />
+      <workItem from="1573781421620" duration="6454000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30665000" />
+    <option name="totallyTimeSpent" value="30910000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -446,16 +442,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webtoon/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webtoon/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -478,8 +464,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webtoon/templates/webtoon/webtoon_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+        <state relative-caret-position="210">
+          <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtoon/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

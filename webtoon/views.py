@@ -38,5 +38,11 @@ class DaumWebtoonList(ListView):
         return WebToon.objects.filter(site_name='다음')
 
 class WebtoonDetailView(DetailView):
-    model = WebToon
+    def get_object(self, queryset=None):
+        webtoon_id = self.kwargs['pk']
+        webtoon = WebToon.objects.get(pk=webtoon_id)
+        webtoon.webtoon_views += 1
+        webtoon.save()
+        return webtoon
 
+    # model = WebToon
